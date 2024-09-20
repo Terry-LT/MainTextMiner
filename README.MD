@@ -1,0 +1,15 @@
+# Main Text Miner
+
+### Main Text Miner 🕷️📄
+
+Dive deep into the web with **Main Text Miner**! This sleek console tool extracts all textual content from any website, giving you the power to save it as a file or copy it directly to your clipboard. Perfect for developers, researchers, and curious minds, this no-frills application does the heavy lifting without the distractions of a user interface.
+
+#### Key Features:
+- **Text Extraction**: Quickly pull all text from a specified URL.
+- **File Output**: Save the extracted text to a file for future reference.
+- **Clipboard Copying**: Instantly copy the content for seamless use in your projects.
+- **Lightweight & Fast**: Designed for efficiency, so you can get your text without the fuss.
+
+Harness the power of the web’s text with just a few simple commands! 🌐✨
+
+Feel free to contribute, report issues, or suggest features. Happy mining! 🚀
