@@ -50,3 +50,22 @@ class WebLinks:
             copy_to_clipboard(text)
         else:
             create_file(text)
+
+    def google_command(self,range_results):
+        if validate_range_response(range_results):
+            # Save range
+            self.range_results = int(range_results)
+            search_input = input("What do you want to search?:")
+            self.info_to_search = search_input
+            links = self.get_web_links()
+            number_of_order = input("Choose number:")
+            if validate_int(number_of_order):
+                self.set_url(number_of_order)
+                self.save_text()
+            else:
+                print_must_be_int()
+
+    def paste_link_command(self,url):
+        if validate_url(url):
+            self.url = url
+            self.save_text()
