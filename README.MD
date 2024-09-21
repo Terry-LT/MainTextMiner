@@ -13,3 +13,15 @@ Dive deep into the web with **Main Text Miner**! This sleek console tool extract
 Harness the power of the web’s text with just a few simple commands! 🌐✨
 
 Feel free to contribute, report issues, or suggest features. Happy mining! 🚀
+## TODO:
+<ul>
+<li>
+Use AI to summarize text from website
+</li>
+<li>
+Get speech text from Youtube video and use AI to summarize text from website
+</li>
+<li>
+Add text to speech 
+</li>
+</ul>
