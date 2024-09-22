@@ -21,7 +21,7 @@ def create_file(text):
         number = int(number)
         if (0 < number) and (number <= formats_dict.__len__()):
             format_name = formats_dict[number]
-            f = open(f"text_from_website.{format_name}", "a", encoding="utf-8")
+            f = open(f"text_from_website.{format_name}", "w", encoding="utf-8")
 
             if format_name == 'html':
                 template = f'''

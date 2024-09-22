@@ -3,7 +3,7 @@ import trafilatura
 from messages import print_out_of_range,print_must_be_int
 from validate import *
 from userinput import *
-
+from ai import summarize_info
 from saveinfo import create_file,copy_to_clipboard
 
 class WebLinks:
@@ -37,19 +37,25 @@ class WebLinks:
             print_must_be_int()
 
     def save_text(self):
-        print(self.url)
         if not validate_last_element_of_url(self.url):
             self.url = self.url[:-1]
-        print(self.url)
 
         text = trafilatura.fetch_url(self.url)
         text = trafilatura.extract(text)
+
+        # TODO check from confing file, if user want to use AI to summarize text
+        text = summarize_info(text)
 
         choose = input("Do you want to copy text to clipboard or save as a file? Type +(text to clipboard) -(save as a file)")
         if remove_all_spaces(choose) == "+":
             copy_to_clipboard(text)
         else:
             create_file(text)
+
+    def youtube_video(self,range_results):
+        pass
+    def user_input_text(self):
+        pass
 
     def google_command(self,range_results):
         if validate_range_response(range_results):
