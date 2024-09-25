@@ -5,6 +5,8 @@ from validate import *
 from userinput import *
 from ai import summarize_info
 from saveinfo import create_file,copy_to_clipboard
+from config import Confing, config
+
 
 class WebLinks:
     url = ""
@@ -43,8 +45,10 @@ class WebLinks:
         text = trafilatura.fetch_url(self.url)
         text = trafilatura.extract(text)
 
-        # TODO check from confing file, if user want to use AI to summarize text
-        text = summarize_info(text)
+        config_file = Confing()
+        #check from confing file, if user want to use AI to summarize text
+        if config_file.use_ai():
+            text = summarize_info(text)
 
         choose = input("Do you want to copy text to clipboard or save as a file? Type +(text to clipboard) -(save as a file)")
         if remove_all_spaces(choose) == "+":

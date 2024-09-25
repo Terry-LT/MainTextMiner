@@ -1,6 +1,4 @@
 import ollama
-from saveinfo import create_file, copy_to_clipboard
-from userinput import  remove_all_spaces
 
 def summarize_info(text):
     print("It will take some times, please wait!")

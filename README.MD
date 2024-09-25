@@ -38,7 +38,7 @@ Get speech text from Youtube video and use AI to summarize text from website
 Add text to speech 
 </li>
 <li>
-Add confing file(xml or just confing)
+<s>Add confing file(xml or just confing)</s>
 </li>
 <li>
 User can put own text to summarize 

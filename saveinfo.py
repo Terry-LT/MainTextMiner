@@ -1,3 +1,5 @@
+from cgitb import reset
+
 from validate import *
 import pyperclip
 from messages import  *
@@ -20,9 +22,9 @@ def create_file(text):
     if validate_int(number):
         number = int(number)
         if (0 < number) and (number <= formats_dict.__len__()):
+
             format_name = formats_dict[number]
             f = open(f"text_from_website.{format_name}", "w", encoding="utf-8")
-
             if format_name == 'html':
                 template = f'''
                 <!DOCTYPE html>
@@ -39,7 +41,6 @@ def create_file(text):
                 f.write(template)
             else:
                 f.write(text)
-
             f.close()
             print("The file was created!")
         else:
