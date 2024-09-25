@@ -19,6 +19,11 @@ def main():
             url = input("Paste your url:")
             weblinks.paste_link_command(url)
 
+        elif command == "paste_youtube":
+            url = input("Paste your url:")
+            weblinks.url = url
+            weblinks.youtube_video()
+
         elif command == "q":
             break
         else:

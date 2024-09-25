@@ -4,8 +4,12 @@ from messages import print_out_of_range,print_must_be_int
 from validate import *
 from userinput import *
 from ai import summarize_info
-from saveinfo import create_file,copy_to_clipboard
+from saveinfo import create_file,copy_to_clipboard, copy_or_create_choice
 from config import Confing, config
+from urllib.parse import urlparse
+from pytube import extract
+
+from youtube_transcript_api import YouTubeTranscriptApi
 
 
 class WebLinks:
@@ -13,7 +17,7 @@ class WebLinks:
     info_to_search = ""
     range_results = 0
     links_results = []
-    text = ""
+    #text = ""
 
     def get_web_links(self):
         results = search(term=self.info_to_search, num_results=self.range_results, lang="eu")
@@ -50,15 +54,26 @@ class WebLinks:
         if config_file.use_ai():
             text = summarize_info(text)
 
-        choose = input("Do you want to copy text to clipboard or save as a file? Type +(text to clipboard) -(save as a file)")
-        if remove_all_spaces(choose) == "+":
-            copy_to_clipboard(text)
-        else:
-            create_file(text)
+        copy_or_create_choice(text)
 
-    def youtube_video(self,range_results):
+    def youtube_video(self):
+        #https://stackoverflow.com/questions/40713268/download-youtube-video-using-python-to-a-certain-directory
+        video_id = extract.video_id(self.url)
+        text = YouTubeTranscriptApi.get_transcript(video_id)
+        # check from confing file, if user want to use AI to summarize text
+        config_file = Confing()
+        if config_file.use_ai():
+            text = summarize_info(text)
+        copy_or_create_choice(text)
+
+    def user_video(self):
+        #https://www.geeksforgeeks.org/extract-speech-text-from-video-in-python/
         pass
     def user_input_text(self):
+        pass
+    def user_image(self):
+        pass
+    def link_image(self):
         pass
 
     def google_command(self,range_results):

@@ -1,6 +1,6 @@
 def print_help_message():
     print('''
-    The available commands: google, paste_link, q
+    The available commands: google, paste_link, paste_youtube, q
     ''')
 
 def print_command_does_not_exist(command):
@@ -17,3 +17,6 @@ def print_main_text(text):
     print("Wait...")
     print("")
     print(f"Result: {text}")
+
+def print_url_not_valid():
+    print("The url is not valid!")

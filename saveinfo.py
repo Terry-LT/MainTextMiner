@@ -3,6 +3,7 @@ from cgitb import reset
 from validate import *
 import pyperclip
 from messages import  *
+from userinput import remove_all_spaces
 
 def copy_to_clipboard(text):
     try:
@@ -10,7 +11,6 @@ def copy_to_clipboard(text):
         print("Text copied to clipboard!")
     except Exception as e:
         print(f"Failed to copy text: {e}")
-
 def create_file(text):
     formats_dict = {
         1: "html",
@@ -47,3 +47,11 @@ def create_file(text):
             print_out_of_range()
     else:
         copy_to_clipboard(text)
+
+def copy_or_create_choice(text):
+    choose = input(
+        "Do you want to copy text to clipboard or save as a file? Type +(text to clipboard) -(save as a file)")
+    if remove_all_spaces(choose) == "+":
+        copy_to_clipboard(text)
+    else:
+        create_file(text)

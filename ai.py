@@ -15,3 +15,6 @@ def summarize_info(text):
 
     print("The text is ready! ")
     return final_text
+
+def describe_image():
+    pass

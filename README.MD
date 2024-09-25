@@ -32,7 +32,7 @@ P.S here will be the links to the .exe file
 <s>Use AI to summarize text from website</s>
 </li>
 <li>
-Get speech text from Youtube video and use AI to summarize text from website
+Get  text from Youtube video and use AI to summarize text from website
 </li>
 <li>
 Add text to speech 
@@ -42,5 +42,11 @@ Add text to speech
 </li>
 <li>
 User can put own text to summarize 
+</li>
+<li>
+Use AI to summarize ifo from video
+</li>
+<li>
+Use AI to describe foto
 </li>
 </ul>
