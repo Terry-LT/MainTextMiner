@@ -1,6 +1,4 @@
 from weblinks import WebLinks
-from messages import *
-from validate import validate_url, validate_range_response, validate_int
 from userinput import *
 
 def main():
