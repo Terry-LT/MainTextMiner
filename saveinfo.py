@@ -1,5 +1,5 @@
 from cgitb import reset
-
+import sys
 from validate import *
 import pyperclip
 from messages import  *
@@ -25,25 +25,26 @@ def create_file(text):
         if (0 < number) and (number <= formats_dict.__len__()):
 
             format_name = formats_dict[number]
-            f = open(f"text_from_website.{format_name}", "w", encoding="utf-8")
-            if format_name == 'html':
-                template = f'''
-                <!DOCTYPE html>
-                <html>
-                <head>
-                <title>Page Title</title>
-                </head>
-                <body>
-                <h1>Text</h1>
-                <p>{text}</p>
-                </body>
-                </html>
-                '''
-                f.write(template)
-            else:
-                f.write(text)
-            f.close()
+            with open(f"text_from_website.{format_name}", "w", encoding="utf-8") as text_file_main_text_miner:
+                if format_name == 'html':
+                    template = f'''
+                               <!DOCTYPE html>
+                               <html>
+                               <head>
+                               <title>Page Title</title>
+                               </head>
+                               <body>
+                               <h1>Text</h1>
+                               <p>{text}</p>
+                               </body>
+                               </html>
+                               '''
+                    text_file_main_text_miner.write(template)
+                else:
+                    text_file_main_text_miner.write(text)
             print("The file was created!")
+            print("Goodbye!")
+            sys.exit() # in order to save a file
         else:
             print_out_of_range()
     else:
