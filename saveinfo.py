@@ -12,7 +12,6 @@ def copy_to_clipboard(text):
     except Exception as e:
         print(f"Failed to copy text: {e}")
 def create_file(text):
-    #TODO: Fix the problem, when the file could be saved, only if you left the program
     formats_dict = {
         1: "html",
         2: "txt"
