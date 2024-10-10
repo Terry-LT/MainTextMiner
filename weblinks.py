@@ -1,22 +1,20 @@
 from googlesearch import search
 import trafilatura
-from messages import print_out_of_range,print_must_be_int
-from validate import *
+
 from userinput import *
-from ai import summarize_info
-from saveinfo import create_file,copy_to_clipboard, copy_or_create_choice
+from ai import summarize_info, get_text_from_transcript
+from saveinfo import copy_or_create_choice
 from config import Confing, config
-from urllib.parse import urlparse
+
 from pytube import extract
-
 from youtube_transcript_api import YouTubeTranscriptApi
-
 
 class WebLinks:
     url = ""
     info_to_search = ""
     range_results = 0
     links_results = []
+    config_file = Confing()
     #text = ""
 
     def get_web_links(self):
@@ -49,9 +47,9 @@ class WebLinks:
         text = trafilatura.fetch_url(self.url)
         text = trafilatura.extract(text)
 
-        config_file = Confing()
+        #config_file = Confing()
         #check from confing file, if user want to use AI to summarize text
-        if config_file.use_ai():
+        if self.config_file.use_ai():
             text = summarize_info(text)
 
         copy_or_create_choice(text)
@@ -61,16 +59,27 @@ class WebLinks:
         video_id = extract.video_id(self.url)
         text = YouTubeTranscriptApi.get_transcript(video_id)
         # check from confing file, if user want to use AI to summarize text
-        config_file = Confing()
-        if config_file.use_ai():
-            text = summarize_info(text)
-        copy_or_create_choice(text)
+        #config_file = Confing()
+        if self.config_file.use_ai():
+            command = input("Do you want summarize info or just get text? Type +(to summarize) -(to get text)")
+            if command == "+":
+                text = summarize_info(text)
+            else:
+                text = get_text_from_transcript(text)
+            copy_or_create_choice(text)
+        else:
+            print_ai_should_be_on_conf()
 
-    def user_video(self):
-        #https://www.geeksforgeeks.org/extract-speech-text-from-video-in-python/
+    def user_video(self,file_path):
         pass
-    def user_input_text(self):
-        pass
+
+    def user_input_text(self,text):
+        if self.config_file.use_ai():
+            text = summarize_info(text)
+            copy_or_create_choice(text)
+        else:
+            print_ai_should_be_on_conf()
+
     def user_image(self):
         pass
     def link_image(self):

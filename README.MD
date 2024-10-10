@@ -41,12 +41,15 @@ Add text to speech
 <s>Add confing file(xml or just confing)</s>
 </li>
 <li>
-User can put own text to summarize 
+<s>User can put own text to summarize </s>
 </li>
 <li>
-Use AI to summarize ifo from video
+Use AI to summarize info from video
 </li>
 <li>
 Use AI to describe foto
+</li>
+<li>
+Release EXE file
 </li>
 </ul>

@@ -1,3 +1,5 @@
+from trafilatura.downloads import PROXY_URL
+
 from weblinks import WebLinks
 from userinput import *
 
@@ -21,6 +23,11 @@ def main():
             url = input("Paste your url:")
             weblinks.url = url
             weblinks.youtube_video()
+
+        elif command == "my_text":
+            print("WARNING: The text should fit in one line. Otherwise it will cause bags.")
+            text = input("Put your text to summarize here:")
+            weblinks.user_input_text(text)
 
         elif command == "q":
             break

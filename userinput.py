@@ -13,3 +13,5 @@ def get_user_command():
     command = input(f"{get_windows_username()}")
     return remove_all_spaces(command)
 
+
+

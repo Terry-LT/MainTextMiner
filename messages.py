@@ -1,6 +1,6 @@
 def print_help_message():
     print('''
-    The available commands: google, paste_link, paste_youtube, q
+    The available commands: google, paste_link, paste_youtube, my_text, q
     ''')
 
 def print_command_does_not_exist(command):
@@ -20,3 +20,7 @@ def print_main_text(text):
 
 def print_url_not_valid():
     print("The url is not valid!")
+
+def print_ai_should_be_on_conf():
+    print("You can use  this function only with AI.")
+    print("Change setting in confing, then reopen this app.")
