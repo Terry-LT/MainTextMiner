@@ -1,7 +1,6 @@
 import configparser
 import os
 
-from saveinfo import create_file
 from userinput import remove_all_spaces
 
 file_name = "configSummarizeArticles.ini"

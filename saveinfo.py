@@ -1,4 +1,4 @@
-from cgitb import reset
+#from cgitb import reset
 import sys
 from validate import *
 import pyperclip

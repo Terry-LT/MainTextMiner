@@ -1,5 +1,3 @@
-from trafilatura.downloads import PROXY_URL
-
 from weblinks import WebLinks
 from userinput import *
 

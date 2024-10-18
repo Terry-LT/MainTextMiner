@@ -23,6 +23,8 @@ Feel free to contribute, report issues, or suggest features. Happy mining! 🚀
 2. Install required packages <br>
 ```pip3 install requirements.txt```
 3. Install Ollama with llama3.1 model
+4. If you have problem such as "", just write this command in the terminal
+```pip install --upgrade lxml_html_clean```
 
 ## Releases
 P.S here will be the links to the .exe file
@@ -51,5 +53,8 @@ Use AI to describe foto
 </li>
 <li>
 Release EXE file
+</li>
+<li>
+User Rich Console API
 </li>
 </ul>
